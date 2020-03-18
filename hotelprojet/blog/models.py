@@ -61,7 +61,7 @@ class Article(models.Model):
 class Commentaire(models.Model):
 
     nom = models.CharField(max_length=255)
-    prenom = models.TextField()
+    prenom = models.CharField(max_length=255)
     article = models.ForeignKey(Article,on_delete=models.CASCADE, related_name='commentaire_article')
     commentaire= models.TextField()
 

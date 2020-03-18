@@ -7,15 +7,15 @@ class InfoSite(models.Model):
     nom = models.CharField(max_length=225)
     mapurl=models.URLField()
     email=models.EmailField()
-    logo = models.ImageField()
+    logo = models.ImageField(upload_to="images/InfoSite")
 
     date_add = models.DateTimeField(auto_now = True)
     date_update = models.DateTimeField(auto_now = True)
     status = models.BooleanField(default = True)
 
     class Meta():
-        verbose_name = "InfoSite"
-        verbose_name_plural = "InfoSites"
+        verbose_name = "Info du site"
+        verbose_name_plural = "Info du sites"
 
     def __str__(self):
         return self.nom
@@ -39,8 +39,8 @@ class CompteSocial(models.Model):
     status = models.BooleanField(default = True)
 
     class Meta():
-        verbose_name = "CompteSocial"
-        verbose_name_plural = "CompteSocials"
+        verbose_name = "Compte social"
+        verbose_name_plural = "Compte socials"
 
     def __str__(self):
         return self.nom
@@ -51,7 +51,7 @@ class Presentation(models.Model):
 
     nom = models.CharField(max_length=225)
     description = models.TextField()
-    image = models.ImageField()
+    image = models.ImageField(upload_to="images/Presentation")
     video = models.TextField()
 
     date_add = models.DateTimeField(auto_now = True)
@@ -72,7 +72,7 @@ class Temoignage(models.Model):
 
     nom = models.CharField(max_length=225)
     prenom = models.CharField(max_length=225)
-    photo = models.ImageField()
+    photo = models.ImageField(upload_to="images/Temoignage")
     message = models.TextField()
 
     date_add = models.DateTimeField(auto_now = True)
